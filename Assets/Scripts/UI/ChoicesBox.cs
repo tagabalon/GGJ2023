@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class ChoicesBox : MonoBehaviour
 {
-    public delegate void ChoiceHighlightCallback(ChoiceItem choice);
-    public delegate void ChoiceSelectCallback(ChoiceItem choice);
+    public delegate void OnChoiceSelect(int index);
 
+    private OnChoiceSelect onChoiceSelect;
     public List<ChoiceItem> m_Choices;
     // Start is called before the first frame update
     void Start()
@@ -32,17 +32,13 @@ public class ChoicesBox : MonoBehaviour
                 newItem.transform.localScale = Vector3.one;
                 m_Choices.Add(newItem);
             }
-            m_Choices[i].Initialize(choices[i], OnHighlightChoice, OnSelectChoice);
+            m_Choices[i].Initialize(choices[i], OnSelectChoice);
         }
 	}
 
 	private void OnSelectChoice(ChoiceItem choice)
 	{
-		
-	}
+        onChoiceSelect?.Invoke(m_Choices.IndexOf(choice));
 
-	private void OnHighlightChoice(ChoiceItem choice)
-	{
-		
-	}
+    }
 }

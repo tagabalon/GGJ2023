@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class DialogueWindow : MonoBehaviour
 {
+    public TextBox m_TextBox;
     public ChoicesBox m_Choices;
 
 	private void Awake()
@@ -27,8 +28,13 @@ public class DialogueWindow : MonoBehaviour
     public void TestDisplay()
     {
         ShowChoices(new string[] { "Option a", "Option b" });
+        ShowText("Obi wan", "Hello there, this is a test message");
     }
 
+    public void ShowText(string characterName, string text)
+	{
+        m_TextBox.ShowText(characterName, text);
+    }
     public void ShowChoices(string[] choices)
 	{
         m_Choices.ShowChoices(choices);

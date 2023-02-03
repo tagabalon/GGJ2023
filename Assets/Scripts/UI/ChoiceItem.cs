@@ -7,9 +7,10 @@ using UnityEngine.EventSystems;
 
 public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public delegate void ChoiceSelectCallback(ChoiceItem choice);
+
     public TMP_Text m_Text;
-	private ChoicesBox.ChoiceHighlightCallback m_OnHighlightChoice;
-	private ChoicesBox.ChoiceSelectCallback m_OnSelectChoice;
+	private ChoiceSelectCallback m_OnSelectChoice;
     private EventSystem m_EventSystem;
 
     private float m_Scale = 1.0f;
@@ -49,7 +50,6 @@ public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerEnter(PointerEventData eventData)
     {
         m_Highlighted = true;
-        m_OnHighlightChoice(this);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -57,10 +57,9 @@ public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         m_Highlighted = false;
     }
 
-    internal void Initialize(string text, ChoicesBox.ChoiceHighlightCallback onHighlightChoice, ChoicesBox.ChoiceSelectCallback onSelectChoice)
+    internal void Initialize(string text, ChoiceSelectCallback onSelectChoice)
 	{
         m_Text.text = text;
-        m_OnHighlightChoice = onHighlightChoice;
         m_OnSelectChoice = onSelectChoice;
 	}
 

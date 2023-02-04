@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class UIPanel : MonoBehaviour
+{
+    private static UIPanel m_Instance;
+
+    public DialogueWindow m_Dialog;
+    public PopupPanel m_Popups;
+    public HUDPanel m_HUD;
+    public JournalPanel m_Journal;
+    private void Awake()
+    {
+        m_Instance = this;
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public static UIPanel GetInstance()
+    {
+        return m_Instance;
+    }
+
+    public void ShowGab(string text)
+    {
+        m_Popups.ShowGab(text);
+    }
+
+    public void ShowJournal()
+    {
+
+    }
+}

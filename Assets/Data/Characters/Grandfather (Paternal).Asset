@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aac2375d1bdd6ae48a3efa9f33380230, type: 3}
-  m_Name: Mother
+  m_Name: Grandfather (Paternal)
   m_EditorClassIdentifier: 
-  m_CharacterName: Elise
+  m_CharacterName: Zhukov
   m_Portrait: {fileID: 21300000, guid: 9a165a79a7d5c7042aea5466a49e4d6e, type: 3}
   m_Father: {fileID: 0}
   m_Mother: {fileID: 0}
   m_ResponseList:
   - m_InteractionType: 0
-    m_Text: Hello! You look quite cheery, care for a coffee?
+    m_Text: Hello there...what brings you here?
   - m_InteractionType: 1
-    m_Text: My name is Elise, its such a pleasure to meet you.
+    m_Text: My name is Zhukov, how can I help you?
   m_TraitList:
-  - {fileID: 11400000, guid: 5e6c42b7316a34a44a404cb1f440336e, type: 2}
+  - {fileID: 11400000, guid: 4c5664968b3276e4f96ea770bb3856a2, type: 2}
   - {fileID: 11400000, guid: 60fbc35ce6f1d8d4097dbb2780f79b04, type: 2}

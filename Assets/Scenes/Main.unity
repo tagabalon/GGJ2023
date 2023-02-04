@@ -880,6 +880,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[18].second.m_TileSpriteIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8136268484370256778, guid: 71b4a8be037169e47853a9f5577fa2e0, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 665937131745036095, guid: 71b4a8be037169e47853a9f5577fa2e0, type: 3}

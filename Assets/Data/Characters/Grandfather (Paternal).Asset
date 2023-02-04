@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grandfather (Paternal)
   m_EditorClassIdentifier: 
   m_CharacterName: Zhukov
-  m_Portrait: {fileID: 21300000, guid: 9a165a79a7d5c7042aea5466a49e4d6e, type: 3}
+  m_Portrait: {fileID: 21300000, guid: 7020aa7a12026b346b3618e67ec3d08a, type: 3}
   m_Father: {fileID: 0}
   m_Mother: {fileID: 0}
   m_ResponseList:

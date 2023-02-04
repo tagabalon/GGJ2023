@@ -16,4 +16,16 @@ public class Data
 			AssetDatabase.ImportAsset(path);
 		}
 	}
+
+    [MenuItem("Assets/Create/GGJ2023/Ancestor")]
+    public static void CreateAncestor()
+    {
+        string path = EditorUtility.SaveFilePanelInProject("Save Ancestor", "new Ancestor", "Asset", "Save Ancestor", "Data");
+        if (path != "")
+        {
+            Ancestor anc = ScriptableObject.CreateInstance<Ancestor>();
+            AssetDatabase.CreateAsset(anc, path);
+            AssetDatabase.ImportAsset(path);
+        }
+    }
 }

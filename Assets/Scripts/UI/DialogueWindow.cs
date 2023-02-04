@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static TextBox;
 
 public class DialogueWindow : MonoBehaviour
 {
@@ -28,17 +29,18 @@ public class DialogueWindow : MonoBehaviour
     public void TestDisplay()
     {
         ShowChoices(new string[] { "Option a", "Option b" });
-        ShowText("Obi wan", "Hello there, this is a test message");
+        ShowText("Obi wan", "Hello there, this is a test message", null);
     }
 
-    public void ShowText(string characterName, string text)
+    public void ShowText(string characterName, string text, OnTextContinue onTextContinue)
 	{
-        m_TextBox.ShowText(characterName, text);
+        m_TextBox.ShowText(characterName, text, onTextContinue);
+        GetComponent<Animator>().SetBool("ShowText", true);
     }
     public void ShowChoices(string[] choices)
 	{
         m_Choices.ShowChoices(choices);
-        GetComponent<Animator>().SetBool("Show", true);
+        GetComponent<Animator>().SetBool("ShowChoice", true);
 	}
 
     private static DialogueWindow m_Instance;

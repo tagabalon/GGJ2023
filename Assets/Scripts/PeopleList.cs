@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class PeopleList : MonoBehaviour
 {
+    public FamilyTreePanel m_FamilyTree;
     Progression.UnlockedNPC[] unlockedNPCS;
     [SerializeField] DisplayTraits[] personSlots;
     int startingDisplayIndex = 0;
@@ -31,15 +32,13 @@ public class PeopleList : MonoBehaviour
 
         for (int i = 0; i < personSlots.Length; i++)
         {
-            personSlots[i].displayTraitHover = OnHover;
-            personSlots[i].hideTrait = OnHoverEnd;
 
             TextMeshProUGUI personName = personSlots[i].GetComponentInChildren<TextMeshProUGUI>();
             int j = startingDisplayIndex + i;
 
             if (j < unlockedNPCS.Length)
             {
-                personSlots[i].SetNPC(unlockedNPCS[j]);
+                personSlots[i].SetNPC(unlockedNPCS[j], OnDisplayTooltip, OnDroppedPortrait);
             }
             else
             {
@@ -48,7 +47,29 @@ public class PeopleList : MonoBehaviour
         }
     }
 
-    private void OnHoverEnd(DisplayTraits displayTraits)
+	private bool OnDroppedPortrait(DraggablePortrait portrait)
+	{
+		if(m_FamilyTree.HasHightlightedSlot())
+		{
+            m_FamilyTree.DropPortrait(portrait);
+            return true;
+		}
+        return false;
+	}
+
+	private void OnDisplayTooltip(Progression.UnlockedNPC npc, bool show)
+	{
+		if(show)
+		{
+            m_Tooltip.Show(npc);
+		}
+		else
+		{
+            m_Tooltip.Hide();
+		}
+	}
+
+	private void OnHoverEnd(DisplayTraits displayTraits)
     {
         //m_Tooltip.Show(displayTraits.m_NPC);
     }

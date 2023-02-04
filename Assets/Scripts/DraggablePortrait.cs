@@ -6,8 +6,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DraggablePortrait : MonoBehaviour, IDragHandler, IPointerDownHandler
+public class DraggablePortrait : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public delegate void TooltipCallback(Progression.UnlockedNPC npc, bool show);
+    private TooltipCallback m_OnDisplayTooltip;
+
+    public delegate bool DropppedCallback(DraggablePortrait portrait);
+    private DropppedCallback m_OnDropPortrait;
+
+    private Transform m_Slot;
     public Progression.UnlockedNPC m_NPC;
     public TMP_Text m_Character;
     public Image m_Portrait;
@@ -16,7 +23,6 @@ public class DraggablePortrait : MonoBehaviour, IDragHandler, IPointerDownHandle
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -25,8 +31,12 @@ public class DraggablePortrait : MonoBehaviour, IDragHandler, IPointerDownHandle
         
     }
 
-    internal void SetNPC(Progression.UnlockedNPC unlockedNPC)
+    internal void SetNPC(Progression.UnlockedNPC unlockedNPC, TooltipCallback onDisplayTooltip, DropppedCallback onDroppedPortrait)
     {
+        m_Slot = GetComponentInParent<Transform>();
+        m_OnDisplayTooltip = onDisplayTooltip;
+        m_OnDropPortrait = onDroppedPortrait;
+
         m_NPC = unlockedNPC;
         m_Character.text = m_NPC.m_NPC.m_CharacterName;
         m_Portrait.sprite = m_NPC.m_NPC.m_Portrait;
@@ -42,7 +52,8 @@ public class DraggablePortrait : MonoBehaviour, IDragHandler, IPointerDownHandle
     {
         if(eventData.button == 0)
         {
-            Debug.Log("draggiun");
+            eventData.selectedObject = gameObject;
+            transform.position = eventData.position - m_DragOffset;
         }
     }
 
@@ -50,7 +61,34 @@ public class DraggablePortrait : MonoBehaviour, IDragHandler, IPointerDownHandle
     {
         if (eventData.button == 0)
         {
-            m_DragOffset = Camera.main.ScreenToViewportPoint(eventData.position) - transform.position;
+            m_DragOffset = eventData.position - (Vector2)transform.position;
+            m_OnDisplayTooltip(null, false);
+            GetComponent<Image>().raycastTarget = false;
         }
+    }
+
+	public void OnPointerUp(PointerEventData eventData)
+	{
+        if (eventData.selectedObject = gameObject)
+        {
+            if (!m_OnDropPortrait(this))
+            {
+                GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            }
+            GetComponent<Image>().raycastTarget = true;
+            eventData.selectedObject = null;
+
+        }
+    }
+
+	public void OnPointerEnter(PointerEventData eventData)
+	{
+        if(!eventData.dragging)
+            m_OnDisplayTooltip(m_NPC, true);
+	}
+
+	public void OnPointerExit(PointerEventData eventData)
+    {
+        m_OnDisplayTooltip(null, false);
     }
 }

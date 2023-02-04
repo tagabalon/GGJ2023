@@ -6,6 +6,7 @@ using UnityEngine;
 public class JournalPanel : MonoBehaviour
 {
     public PeopleList m_NPCs;
+    public FamilyTreePanel m_FamilyTree;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class JournalPanel : MonoBehaviour
     internal void OpenJournal()
     {
         m_NPCs.DisplayPeople();
+        m_FamilyTree.ShowFamilyTree();
         gameObject.SetActive(true);
     }
 

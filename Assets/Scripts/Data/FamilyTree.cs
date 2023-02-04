@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -19,6 +20,6 @@ public class FamilyTree : ScriptableObject
         public Ancestor m_Mother;
     }
 
-    [SerializeReference]
+	[SerializeReference]
     public List<FamilyMember> m_Members;
 }

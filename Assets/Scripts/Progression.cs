@@ -11,7 +11,9 @@ public class Progression : MonoBehaviour
     public class UnlockedNPC
     {
         public Ancestor m_NPC;
-        public bool m_Locked = true;
+
+
+		public bool m_Locked = true;
         public List<PersonalityTrait> m_UnlockedTraits;
 
         internal bool IsUnlocked()
@@ -28,6 +30,10 @@ public class Progression : MonoBehaviour
             {
                 m_UnlockedTraits.Add(trait);
             }
+        }
+        internal PersonalityTrait[] GetTraits()
+        {
+            return m_UnlockedTraits.ToArray();
         }
     }
 

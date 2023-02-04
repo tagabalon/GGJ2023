@@ -8,6 +8,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager m_Instance;
+    [SerializeField] GameObject panel;
+    bool bookIsOpen = false;
 
     private void Awake()
     {
@@ -17,7 +19,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        panel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,5 +46,29 @@ public class GameManager : MonoBehaviour
     internal Question GetQuestion(int index, bool removeFromInventory)
     {
         return GetComponent<Progression>().GetQuestion(index, removeFromInventory);
+    }
+
+    internal void UnlockNPC(Ancestor npc, PersonalityTrait trait)
+    {
+        GetComponent<Progression>().UnlockNPC(npc, trait);
+    }
+
+    public Progression.UnlockedNPC[] GetUnlockedNPCs()
+    {
+        return GetComponent<Progression>().GetUnlockedNPCs();
+    }
+
+    public void OnBookClick()
+    {
+        if (bookIsOpen == false)
+        {
+            panel.SetActive(true);
+            bookIsOpen = true;
+        }
+        else if (bookIsOpen == true)
+        {
+            panel.SetActive(false);
+            bookIsOpen = false;
+        }
     }
 }

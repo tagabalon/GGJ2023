@@ -28,28 +28,32 @@ public class Ancestor : ScriptableObject
 
     }
 
-    internal bool ProcessQuestion(Question question, out string npcResponse)
+    internal bool ProcessQuestion(Question question, out string npcResponse, out PersonalityTrait trait)
     {
         List<string> responses = new List<string>();
-        foreach(PersonalityTrait trait in question.m_UnlockedTraits)
+        List<PersonalityTrait> traits = new List<PersonalityTrait>();
+        foreach(PersonalityTrait unlockedTrait in question.m_UnlockedTraits)
         {
-            if(m_TraitList.Contains(trait))
+            if(m_TraitList.Contains(unlockedTrait))
             {
-                responses.AddRange(trait.GetPositiveResponses());
+                responses.AddRange(unlockedTrait.GetPositiveResponses());
+                traits.Add(unlockedTrait);
             }
             else
             {
-                responses.AddRange(trait.GetNegativeResponses());
+                responses.AddRange(unlockedTrait.GetNegativeResponses());
             }
         }
 
-        if(responses.Count >= 1)
+        if(responses.Count >= 1 && traits.Count >= 1)
         {
             npcResponse = responses[0];
+            trait = traits[0];
             return true;
         }
         {
             npcResponse = "";
+            trait = null;
             return true;
         }
     }

@@ -30,7 +30,6 @@ public class ChoicesBox : MonoBehaviour
             { 
                 ChoiceItem newItem = Instantiate<ChoiceItem>(m_Choices[0]);
                 newItem.transform.SetParent(m_Choices[0].transform.parent);
-                newItem.transform.localScale = Vector3.one;
                 m_Choices.Add(newItem);
             }
             m_Choices[i].Initialize(choices[i], OnSelectChoice);

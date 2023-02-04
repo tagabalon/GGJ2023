@@ -3,9 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JournalPanel : MonoBehaviour
+public class NPCTooltip : MonoBehaviour
 {
-    public PeopleList m_NPCs;
+    internal void Show(Progression.UnlockedNPC m_NPC)
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,15 +25,5 @@ public class JournalPanel : MonoBehaviour
     void Update()
     {
         
-    }
-    internal void OpenJournal()
-    {
-        m_NPCs.DisplayPeople();
-        gameObject.SetActive(true);
-    }
-
-    public void CloseJournal()
-    {
-        gameObject.SetActive(false);
     }
 }

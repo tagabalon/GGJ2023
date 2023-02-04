@@ -11,10 +11,11 @@ public class PeopleList : MonoBehaviour
     [SerializeField] DisplayTraits[] personSlots;
     int startingDisplayIndex = 0;
 
+    public NPCTooltip m_Tooltip;
+
     // Start is called before the first frame update
     void Start()
     {
-        unlockedNPCS = GameManager.GetInstance().GetUnlockedNPCs();
     }
 
     // Update is called once per frame
@@ -23,42 +24,38 @@ public class PeopleList : MonoBehaviour
        
     }
     
-    void DisplayPeople()
+    public void DisplayPeople()
     {
-        for(int i = 0; i < personSlots.Length; i++)
+
+        unlockedNPCS = GameManager.GetInstance().GetUnlockedNPCs();
+
+        for (int i = 0; i < personSlots.Length; i++)
         {
             personSlots[i].displayTraitHover = OnHover;
-            Sprite personImage = personSlots[i].GetComponentInChildren<Sprite>();
+            personSlots[i].hideTrait = OnHoverEnd;
+
             TextMeshProUGUI personName = personSlots[i].GetComponentInChildren<TextMeshProUGUI>();
             int j = startingDisplayIndex + i;
 
             if (j < unlockedNPCS.Length)
             {
-                personImage =  unlockedNPCS[j].m_NPC.m_Portrait;
-                personName.text = unlockedNPCS[j].m_NPC.m_CharacterName;
-
-                GameObject namesText = personSlots[j].dialoguePanel.transform.Find("Names Text").gameObject;
-                GameObject traitsText = personSlots[j].dialoguePanel.transform.Find("Traits Text").gameObject;
-
-                namesText.GetComponent<TextMeshProUGUI>().text = personName.text;
-
-                List<PersonalityTrait> traitList = unlockedNPCS[j].m_UnlockedTraits;
-
-                for(int k = 0; k < traitList.Count; k++)
-                    traitsText.GetComponent<TextMeshProUGUI>().text += traitList[k].TraitName + "\n";
-
+                personSlots[i].SetNPC(unlockedNPCS[j]);
             }
             else
             {
-                personImage = null;
-                personName.text = null;
+                personSlots[i].gameObject.SetActive(false);
             }
         }
     }
 
+    private void OnHoverEnd(DisplayTraits displayTraits)
+    {
+        //m_Tooltip.Show(displayTraits.m_NPC);
+    }
+
     private void OnHover(DisplayTraits displayTraits)
     {
-        
+        //m_Tooltip.Show(displayTraits.m_NPC);
     }
 
     public void OnUpButtonPressed()
@@ -70,7 +67,7 @@ public class PeopleList : MonoBehaviour
 
     public void OnDownButtonPressed()
     {
-        if (startingDisplayIndex < people.Count - personSlots.Length + 1)
-            startingDisplayIndex += 2;
+        //if (startingDisplayIndex < people.Count - personSlots.Length + 1)
+        //    startingDisplayIndex += 2;
     }
 }

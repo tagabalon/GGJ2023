@@ -38,7 +38,7 @@ public class Progression : MonoBehaviour
         public int m_Count;
     }
 
-    private List<UnlockedNPC> m_UnlockedNPCs = new List<UnlockedNPC>();
+    public List<UnlockedNPC> m_UnlockedNPCs = new List<UnlockedNPC>();
     public List<InventoryQuestion> m_Questions;
 
 

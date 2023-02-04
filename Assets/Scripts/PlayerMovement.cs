@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 7f;
+	private Rigidbody2D rb;
+	private PlayerAnimation anim;
+	private float moveH, moveV;
 
-    Vector2 lastPosClicked;
+	[SerializeField]
+	private float moveSpeed = 1.0f;
 
-    bool isMoving;
+	private void Awake()
+	{
+		rb = GetComponent<Rigidbody2D>();
+		anim = GetComponent<PlayerAnimation>();
+	}
 
-    private void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            lastPosClicked = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            isMoving = true;
-        }
+	private void FixedUpdate()
+	{
+		moveH = Input.GetAxis("Horizontal") * moveSpeed;
+		moveV = Input.GetAxis("Vertical") * moveSpeed;
 
-        if (isMoving && (Vector2)transform.position != lastPosClicked)
-        {
-            float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, lastPosClicked, step);
+		rb.velocity = new Vector2 (moveH, moveV);
 
-        }
-        else
-            isMoving = false;
-    }
+		Vector2 direction = new Vector2(moveH, moveV);
+
+		if (anim != null)
+			anim.SetDirection(direction);
+	}
 }

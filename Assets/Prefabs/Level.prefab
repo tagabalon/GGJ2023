@@ -20470,6 +20470,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 665937131745036095}
     m_Modifications:
+    - target: {fileID: 4298675899788854291, guid: 02d2f0d59a2ab92409040c2d8cf2402e, type: 3}
+      propertyPath: m_Loot
+      value: 
+      objectReference: {fileID: 11400000, guid: dca23b21da712644bb8647cc51820b80, type: 2}
+    - target: {fileID: 4298675899788854291, guid: 02d2f0d59a2ab92409040c2d8cf2402e, type: 3}
+      propertyPath: m_Amount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7115315962738361926, guid: 02d2f0d59a2ab92409040c2d8cf2402e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -20602,6 +20610,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 665937131745036095}
     m_Modifications:
+    - target: {fileID: 4298675899788854291, guid: 02d2f0d59a2ab92409040c2d8cf2402e, type: 3}
+      propertyPath: m_Loot
+      value: 
+      objectReference: {fileID: 11400000, guid: f4b2d20a8e215664db4afa1d7cb41548, type: 2}
+    - target: {fileID: 4298675899788854291, guid: 02d2f0d59a2ab92409040c2d8cf2402e, type: 3}
+      propertyPath: m_Amount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7115315962738361926, guid: 02d2f0d59a2ab92409040c2d8cf2402e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -20738,6 +20754,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 665937131745036095}
     m_Modifications:
+    - target: {fileID: 4298675899788854291, guid: 02d2f0d59a2ab92409040c2d8cf2402e, type: 3}
+      propertyPath: m_Loot
+      value: 
+      objectReference: {fileID: 11400000, guid: be1c81c3df0dc5e4786c3b9e4adcbf36, type: 2}
+    - target: {fileID: 4298675899788854291, guid: 02d2f0d59a2ab92409040c2d8cf2402e, type: 3}
+      propertyPath: m_Amount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7115315962738361926, guid: 02d2f0d59a2ab92409040c2d8cf2402e, type: 3}
       propertyPath: m_RootOrder
       value: -1

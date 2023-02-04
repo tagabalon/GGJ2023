@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PeopleList : MonoBehaviour
 {
     [SerializeField] List<PersonSO> people;
-    [SerializeField] GameObject[] peopleDisplay;
+    [SerializeField] GameObject[] personSlots;
     int startingDisplayIndex = 0;
 
 
@@ -25,10 +25,10 @@ public class PeopleList : MonoBehaviour
     
     void DisplayPeople()
     {
-        for(int i = 0; i < peopleDisplay.Length; i++)
+        for(int i = 0; i < personSlots.Length; i++)
         {
-            Image personImage = peopleDisplay[i].GetComponentInChildren<Image>();
-            TextMeshProUGUI personName = peopleDisplay[i].GetComponentInChildren<TextMeshProUGUI>();
+            Image personImage = personSlots[i].GetComponentInChildren<Image>();
+            TextMeshProUGUI personName = personSlots[i].GetComponentInChildren<TextMeshProUGUI>();
             int j = startingDisplayIndex + i;
 
             if (j < people.Count)
@@ -38,8 +38,8 @@ public class PeopleList : MonoBehaviour
             }
             else
             {
-                personImage.color = Color.gray;
-                personName.text = "Wala";
+                personImage = null;
+                personName.text = null;
             }
         }
     }
@@ -53,7 +53,7 @@ public class PeopleList : MonoBehaviour
 
     public void OnDownButtonPressed()
     {
-        if (startingDisplayIndex < people.Count - peopleDisplay.Length + 1)
+        if (startingDisplayIndex < people.Count - personSlots.Length + 1)
             startingDisplayIndex += 2;
     }
 }

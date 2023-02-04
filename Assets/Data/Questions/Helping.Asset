@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c80a26605f58e87488352927392a92b2, type: 3}
-  m_Name: Lazy
+  m_Script: {fileID: 11500000, guid: 1a3eb55f6a61e184d98224ac0d5e5cf8, type: 3}
+  m_Name: Helping
   m_EditorClassIdentifier: 
-  m_Id: 0
-  m_TraitName: Lazy
-  m_PositiveResponses:
-  - I try to not get too busy...
-  m_NegativeResponses:
-  - I don't like being idle
+  m_QuestionText: Do you like helping people out?
+  m_UnlockedTraits:
+  - {fileID: 11400000, guid: 60fbc35ce6f1d8d4097dbb2780f79b04, type: 2}

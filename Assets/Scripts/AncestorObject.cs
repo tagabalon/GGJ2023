@@ -80,7 +80,13 @@ public class AncestorObject : MonoBehaviour
                 DialogueWindow.GetInstance().ShowText(
                     m_Data.m_CharacterName,
                     response,
+                    m_Data.m_Portrait,
                     OnTextEnd);
+
+                if(trait != null)
+                {
+                    UIPanel.GetInstance().ShowGab(m_Data.m_CharacterName + " is " + trait.TraitName);
+                }
 
                 GameManager.GetInstance().UnlockNPC(m_Data, trait);
             }
@@ -93,6 +99,7 @@ public class AncestorObject : MonoBehaviour
         DialogueWindow.GetInstance().ShowText(
             m_Data.m_CharacterName,
             m_Data.GetInteractionText(m_CurrentInteraction),
+            m_Data.m_Portrait,
             OnTextEnd);
     }
 }

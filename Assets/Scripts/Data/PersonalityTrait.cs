@@ -11,6 +11,10 @@ public class PersonalityTrait : ScriptableObject
 
 	[SerializeField]
 	private string m_TraitName;
+	public string TraitName
+	{
+		get { return m_TraitName; }
+	}
 
 	[SerializeReference]
 	List<string> m_PositiveResponses;

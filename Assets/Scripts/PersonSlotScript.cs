@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PersonSlotScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class PersonSlotScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     // Start is called before the first frame update
     Image blankImage;
@@ -14,9 +14,12 @@ public class PersonSlotScript : MonoBehaviour, IPointerDownHandler, IBeginDragHa
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private Vector3 currentPosition;
 
     [SerializeField] Image personImage;
     [SerializeField] string personName;
+
+    
 
     void Start()
     {
@@ -31,6 +34,7 @@ public class PersonSlotScript : MonoBehaviour, IPointerDownHandler, IBeginDragHa
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        currentPosition = this.transform.position;
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
     }
@@ -51,11 +55,4 @@ public class PersonSlotScript : MonoBehaviour, IPointerDownHandler, IBeginDragHa
 
     }
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        if (eventData.pointerDrag != null)
-        {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-        }
-    }
 }

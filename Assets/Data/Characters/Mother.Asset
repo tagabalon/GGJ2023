@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aac2375d1bdd6ae48a3efa9f33380230, type: 3}
-  m_Name: Susan
+  m_Name: Mother
   m_EditorClassIdentifier: 
   m_CharacterName: Susan
   m_ResponseList:

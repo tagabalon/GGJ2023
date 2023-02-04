@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80a26605f58e87488352927392a92b2, type: 3}
   m_Name: Lazy
   m_EditorClassIdentifier: 
+  m_Id: 0
+  m_TraitName: Lazy
+  m_PositiveResponses:
+  - I try to not get too busy...
+  m_NegativeResponses:
+  - 

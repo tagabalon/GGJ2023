@@ -74,13 +74,15 @@ public class AncestorObject : MonoBehaviour
         else
         {
             Question selectedQuestion = GameManager.GetInstance().GetQuestion(index, true);
-            if(m_Data.ProcessQuestion(selectedQuestion, out string response))
+            if(m_Data.ProcessQuestion(selectedQuestion, out string response, out PersonalityTrait trait))
             {
                 m_CurrentInteraction = Interaction.InteractionType.AnsweringQuestion;
                 DialogueWindow.GetInstance().ShowText(
                     m_Data.m_CharacterName,
                     response,
                     OnTextEnd);
+
+                GameManager.GetInstance().UnlockNPC(m_Data, trait);
             }
         }
     }

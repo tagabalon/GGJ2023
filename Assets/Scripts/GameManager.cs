@@ -45,4 +45,14 @@ public class GameManager : MonoBehaviour
     {
         return GetComponent<Progression>().GetQuestion(index, removeFromInventory);
     }
+
+    internal void UnlockNPC(Ancestor npc, PersonalityTrait trait)
+    {
+        GetComponent<Progression>().UnlockNPC(npc, trait);
+    }
+
+    public Progression.UnlockedNPC[] GetUnlockedNPCs()
+    {
+        return GetComponent<Progression>().GetUnlockedNPCs();
+    }
 }

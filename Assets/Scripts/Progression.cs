@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -16,6 +17,17 @@ public class Progression : MonoBehaviour
         internal bool IsUnlocked()
         {
             return !m_Locked;
+        }
+
+        internal void UnlockTraits(PersonalityTrait trait)
+        {
+            if(m_UnlockedTraits == null)
+                m_UnlockedTraits = new List<PersonalityTrait>();
+
+            if(!m_UnlockedTraits.Contains(trait))
+            {
+                m_UnlockedTraits.Add(trait);
+            }
         }
     }
 
@@ -82,5 +94,31 @@ public class Progression : MonoBehaviour
             return question;
         }
         return null;
+    }
+
+    internal void UnlockNPC(Ancestor npc, PersonalityTrait trait)
+    {
+        bool found = false;
+        foreach (UnlockedNPC unlockedNPC in m_UnlockedNPCs)
+        {
+            if (unlockedNPC.m_NPC == npc)
+            {
+                unlockedNPC.UnlockTraits(trait);
+                found = true;
+                break;
+            }
+        }
+        if(!found)
+        {
+            UnlockedNPC unlockedNPC = new UnlockedNPC();
+            unlockedNPC.m_NPC = npc;
+            unlockedNPC.UnlockTraits(trait);
+            m_UnlockedNPCs.Add(unlockedNPC);
+        }
+    }
+
+    public UnlockedNPC[] GetUnlockedNPCs()
+    {
+        return m_UnlockedNPCs.ToArray();
     }
 }

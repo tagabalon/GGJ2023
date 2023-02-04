@@ -6,6 +6,9 @@ using UnityEngine;
 public class Ancestor : ScriptableObject
 {
     public string m_CharacterName;
+    public Sprite m_Portrait;
+    public Ancestor m_Father;
+    public Ancestor m_Mother;
 
     public List<NPCResponse> m_ResponseList;
 

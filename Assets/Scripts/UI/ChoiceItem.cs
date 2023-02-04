@@ -12,8 +12,7 @@ public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public TMP_Text m_Text;
 	private ChoiceSelectCallback m_OnSelectChoice;
     private EventSystem m_EventSystem;
-
-    private float m_Scale = 1.0f;
+    
     private bool m_Highlighted = false;
 
     public string Text
@@ -40,7 +39,7 @@ public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         
         if (m_Highlighted)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, 1.5f * Vector3.one, Time.deltaTime * 3.0f);
+            transform.localScale = Vector3.Lerp(transform.localScale, 1.15f * Vector3.one, Time.deltaTime * 3.0f);
         }
 		else
         {
@@ -66,8 +65,10 @@ public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     internal void Initialize(string text, ChoiceSelectCallback onSelectChoice)
 	{
+        transform.localScale = Vector3.one;
         m_Text.text = text;
         m_OnSelectChoice = onSelectChoice;
-	}
+        m_Highlighted = false;
+    }
 
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Progression : MonoBehaviour
 {
@@ -18,7 +19,15 @@ public class Progression : MonoBehaviour
         }
     }
 
+    [System.Serializable]
+    public class InventoryQuestion
+    {
+        public Question m_Question;
+        public int m_Count;
+    }
+
     private List<UnlockedNPC> m_UnlockedNPCs = new List<UnlockedNPC>();
+    public List<InventoryQuestion> m_Questions;
 
 
     // Start is called before the first frame update
@@ -42,5 +51,36 @@ public class Progression : MonoBehaviour
             }
         }
         return false;
+    }
+
+    internal string[] GetInventoryQuestions()
+    {
+        List<string> temp = new List<string>();
+        foreach(InventoryQuestion q in m_Questions)
+        {
+            temp.Add(q.m_Question.m_QuestionText);
+        }
+        return temp.ToArray();
+    }
+
+    internal Question GetQuestion(int index, bool removeFromInventory)
+    {
+        if(index < m_Questions.Count)
+        {
+            Question question = m_Questions[index].m_Question;
+            if(removeFromInventory)
+            {
+                if (m_Questions[index].m_Count > 2)
+                {
+                    m_Questions[index].m_Count--;
+                }
+                else
+                {
+                    m_Questions.RemoveAt(index);
+                }
+            }
+            return question;
+        }
+        return null;
     }
 }

@@ -7,7 +7,7 @@ public class ChoicesBox : MonoBehaviour
 {
     public delegate void OnChoiceSelect(int index);
 
-    private OnChoiceSelect onChoiceSelect;
+    private OnChoiceSelect m_OnChoiceSelect;
     public List<ChoiceItem> m_Choices;
     // Start is called before the first frame update
     void Start()
@@ -21,24 +21,29 @@ public class ChoicesBox : MonoBehaviour
         
     }
 
-	internal void ShowChoices(string[] choices)
+	internal void ShowChoices(string[] choices, OnChoiceSelect onChoiceSelected)
 	{
-        for(int i = 0; i < choices.Length; i++)
+        m_OnChoiceSelect = onChoiceSelected;
+        for (int i = 0; i < choices.Length; i++)
         {
             if (i >= m_Choices.Count)
             { 
                 ChoiceItem newItem = Instantiate<ChoiceItem>(m_Choices[0]);
-                newItem.transform.parent = m_Choices[0].transform.parent;
+                newItem.transform.SetParent(m_Choices[0].transform.parent);
                 newItem.transform.localScale = Vector3.one;
                 m_Choices.Add(newItem);
             }
             m_Choices[i].Initialize(choices[i], OnSelectChoice);
         }
+        for(int i = choices.Length; i < m_Choices.Count; i++)
+        {
+            m_Choices[i].gameObject.SetActive(false);
+        }
 	}
 
 	private void OnSelectChoice(ChoiceItem choice)
 	{
-        onChoiceSelect?.Invoke(m_Choices.IndexOf(choice));
+        m_OnChoiceSelect?.Invoke(m_Choices.IndexOf(choice));
 
     }
 }

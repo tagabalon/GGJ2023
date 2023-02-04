@@ -683,6 +683,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d86be195ee362e4391478bf9cb40d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Questions:
+  - m_Question: {fileID: 11400000, guid: dca23b21da712644bb8647cc51820b80, type: 2}
+    m_Count: 1
+  - m_Question: {fileID: 11400000, guid: be1c81c3df0dc5e4786c3b9e4adcbf36, type: 2}
+    m_Count: 1
 --- !u!114 &2072627906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,6 +726,26 @@ PrefabInstance:
     - target: {fileID: 1855481826973921049, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855481826973921050, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855481826973921050, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 195.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855481826973921050, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855481826973921050, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 97.89801
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855481827828760067, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1855481827828760093, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
       propertyPath: m_Name
@@ -830,9 +855,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1913450715323487511, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4275415130610061943, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 44.48428
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142232042614348753, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

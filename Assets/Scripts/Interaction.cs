@@ -8,6 +8,7 @@ public class Interaction
     {
         None = -1,
         FirstGreeting,
-        SelfIntro
+        SelfIntro,
+        AnsweringQuestion
     }
 }

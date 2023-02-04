@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac2375d1bdd6ae48a3efa9f33380230, type: 3}
-  m_Name: Susan
+  m_Script: {fileID: 11500000, guid: 1a3eb55f6a61e184d98224ac0d5e5cf8, type: 3}
+  m_Name: MeetPeople
   m_EditorClassIdentifier: 
-  m_CharacterName: Susan
-  m_ResponseList:
-  - m_InteractionType: 0
-    m_Text: Hi there...
-  - m_InteractionType: 1
-    m_Text: My name is Susan, how can I help you?
-  m_TraitList:
+  m_QuestionText: Do you like meeting new people?
+  m_UnlockedTraits:
   - {fileID: 11400000, guid: 5e6c42b7316a34a44a404cb1f440336e, type: 2}

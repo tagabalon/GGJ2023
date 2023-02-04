@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Progression))]
@@ -33,5 +34,15 @@ public class GameManager : MonoBehaviour
     internal bool IsNPCUnlocked(Ancestor npcData)
     {
         return GetComponent<Progression>().IsNPCUnlocked(npcData);
+    }
+
+    internal string[] GetInventoryQuestions()
+    {
+        return GetComponent<Progression>().GetInventoryQuestions();
+    }
+
+    internal Question GetQuestion(int index, bool removeFromInventory)
+    {
+        return GetComponent<Progression>().GetQuestion(index, removeFromInventory);
     }
 }

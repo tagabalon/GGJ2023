@@ -28,4 +28,16 @@ public class Data
             AssetDatabase.ImportAsset(path);
         }
     }
+
+    [MenuItem("Assets/Create/GGJ2023/Question")]
+    public static void CreateQuestion()
+    {
+        string path = EditorUtility.SaveFilePanelInProject("Save Question", "new Question", "Asset", "Save Question", "Data");
+        if (path != "")
+        {
+            Question que = ScriptableObject.CreateInstance<Question>();
+            AssetDatabase.CreateAsset(que, path);
+            AssetDatabase.ImportAsset(path);
+        }
+    }
 }

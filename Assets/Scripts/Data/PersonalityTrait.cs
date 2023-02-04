@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,4 +17,14 @@ public class PersonalityTrait : ScriptableObject
 
 	[SerializeReference]
 	List<string> m_NegativeResponses;
+
+    internal string[] GetNegativeResponses()
+    {
+        return m_NegativeResponses.ToArray();
+    }
+
+    internal string[] GetPositiveResponses()
+    {
+		return m_PositiveResponses.ToArray();
+    }
 }

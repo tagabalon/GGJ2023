@@ -27,4 +27,30 @@ public class Ancestor : ScriptableObject
         return "Text Missing";
 
     }
+
+    internal bool ProcessQuestion(Question question, out string npcResponse)
+    {
+        List<string> responses = new List<string>();
+        foreach(PersonalityTrait trait in question.m_UnlockedTraits)
+        {
+            if(m_TraitList.Contains(trait))
+            {
+                responses.AddRange(trait.GetPositiveResponses());
+            }
+            else
+            {
+                responses.AddRange(trait.GetNegativeResponses());
+            }
+        }
+
+        if(responses.Count >= 1)
+        {
+            npcResponse = responses[0];
+            return true;
+        }
+        {
+            npcResponse = "";
+            return true;
+        }
+    }
 }

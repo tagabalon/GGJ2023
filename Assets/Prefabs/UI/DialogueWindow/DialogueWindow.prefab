@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1855481826973921052}
   - component: {fileID: 1855481826973921051}
   - component: {fileID: 1855481826973921053}
+  - component: {fileID: 9142232042614348753}
   m_Layer: 5
   m_Name: TextBox
   m_TagString: Untagged
@@ -95,6 +96,18 @@ MonoBehaviour:
   m_CharacterName: {fileID: 1855481828334210673}
   m_Dialogue: {fileID: 1855481827466306640}
   m_Prompter: {fileID: 4126022524977232533}
+--- !u!225 &9142232042614348753
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855481826973921049}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1855481827466306670
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +256,6 @@ GameObject:
   - component: {fileID: 1855481827828760064}
   - component: {fileID: 1855481827828760095}
   - component: {fileID: 1855481827828760066}
-  - component: {fileID: 1855481827828760067}
   m_Layer: 5
   m_Name: DialogueWindow
   m_TagString: Untagged
@@ -345,18 +357,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!225 &1855481827828760067
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855481827828760093}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1855481828334210575
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 1855481828527132269}
   - component: {fileID: 1855481828527132271}
   - component: {fileID: 1855481828527132240}
+  - component: {fileID: 1913450715323487511}
   m_Layer: 5
   m_Name: Choices
   m_TagString: Untagged
@@ -611,6 +612,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Choices:
   - {fileID: 2658275253331864732}
+--- !u!225 &1913450715323487511
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855481828527132267}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5332430879252829187
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,5 +42,11 @@ public class UIPanel : MonoBehaviour
     public void ShowJournal()
     {
         m_Journal.OpenJournal();
+    }
+
+    internal void ShowLoot(Question question, int amount)
+    {
+        m_Popups.ShowPopup("Collected a new question item!",
+            "Item: " + question.m_QuestionText +"\n" + "Qty: " + amount);
     }
 }

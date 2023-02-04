@@ -76,4 +76,9 @@ public class GameManager : MonoBehaviour
     {
         return GetComponent<Progression>().GetQuestions();
     }
+
+    internal void AddQuestion(Question question, int amount)
+    {
+        GetComponent<Progression>().AddQuestion(question, amount);
+    }
 }

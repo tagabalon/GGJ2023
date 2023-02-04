@@ -11,7 +11,7 @@ public class ChestController : MonoBehaviour
 		if (!isOpen)
 		{
 			isOpen = true;
-			Debug.Log("Chest is open.");
+			//Debug.Log("Chest is open.");
 		}
 	}
 }

@@ -30,7 +30,7 @@ public class Interactable : MonoBehaviour
 		if(collision.CompareTag("Player"))
 		{
 			isInRange = true;
-			Debug.Log("Player is in range.");
+			//Debug.Log("Player is in range.");
 		}
 	}
 
@@ -39,7 +39,7 @@ public class Interactable : MonoBehaviour
 		if (collision.CompareTag("Player"))
 		{
 			isInRange = false;
-			Debug.Log("Player is not in range.");
+			//Debug.Log("Player is not in range.");
 		}
 	}
 

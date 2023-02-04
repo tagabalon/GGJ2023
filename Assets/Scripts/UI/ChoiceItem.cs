@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public delegate void ChoiceSelectCallback(ChoiceItem choice);
 
@@ -56,6 +56,13 @@ public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         m_Highlighted = false;
     }
+	public void OnPointerClick(PointerEventData eventData)
+	{
+		if(eventData.button == 0)
+		{
+            m_OnSelectChoice?.Invoke(this);
+		}
+	}
 
     internal void Initialize(string text, ChoiceSelectCallback onSelectChoice)
 	{

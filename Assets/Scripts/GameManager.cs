@@ -71,4 +71,9 @@ public class GameManager : MonoBehaviour
             bookIsOpen = false;
         }
     }
+
+    internal Progression.InventoryQuestion[] GetQuestions()
+    {
+        return GetComponent<Progression>().GetQuestions();
+    }
 }

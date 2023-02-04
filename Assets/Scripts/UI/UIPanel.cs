@@ -10,6 +10,7 @@ public class UIPanel : MonoBehaviour
     public PopupPanel m_Popups;
     public HUDPanel m_HUD;
     public JournalPanel m_Journal;
+    public InventoryPanel m_Inventory;
     private void Awake()
     {
         m_Instance = this;
@@ -18,6 +19,7 @@ public class UIPanel : MonoBehaviour
     void Start()
     {
         m_Journal.CloseJournal();
+        m_Inventory.HideInventory();
     }
 
     // Update is called once per frame

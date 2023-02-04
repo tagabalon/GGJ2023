@@ -121,4 +121,9 @@ public class Progression : MonoBehaviour
     {
         return m_UnlockedNPCs.ToArray();
     }
+
+    internal InventoryQuestion[] GetQuestions()
+    {
+        return m_Questions.ToArray();
+    }
 }

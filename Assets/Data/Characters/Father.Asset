@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Father
   m_EditorClassIdentifier: 
   m_CharacterName: Fred
+  m_Portrait: {fileID: 0}
+  m_Father: {fileID: 0}
+  m_Mother: {fileID: 0}
   m_ResponseList:
   - m_InteractionType: 0
     m_Text: Hi there...
   - m_InteractionType: 1
     m_Text: Fred here. What's up?
   m_TraitList:
-  - {fileID: 11400000, guid: 5e6c42b7316a34a44a404cb1f440336e, type: 2}
+  - {fileID: 11400000, guid: 4c5664968b3276e4f96ea770bb3856a2, type: 2}
+  - {fileID: 11400000, guid: 8fced1b9cc87401478da868db1526889, type: 2}

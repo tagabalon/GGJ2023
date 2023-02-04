@@ -40,4 +40,16 @@ public class Data
             AssetDatabase.ImportAsset(path);
         }
     }
+
+    [MenuItem("Assets/Create/GGJ2023/Family Tree")]
+    public static void CreateFamilyTree()
+    {
+        string path = EditorUtility.SaveFilePanelInProject("Save Family Tree", "new Family Tree", "Asset", "Save Family Tree", "Data");
+        if (path != "")
+        {
+            FamilyTree ft = ScriptableObject.CreateInstance<FamilyTree>();
+            AssetDatabase.CreateAsset(ft, path);
+            AssetDatabase.ImportAsset(path);
+        }
+    }
 }

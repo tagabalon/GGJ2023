@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class JournalPanel : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,14 @@ public class JournalPanel : MonoBehaviour
     void Update()
     {
         
+    }
+    internal void OpenJournal()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void CloseJournal()
+    {
+        gameObject.SetActive(false);
     }
 }

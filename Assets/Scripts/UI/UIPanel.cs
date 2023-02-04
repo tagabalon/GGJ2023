@@ -17,7 +17,7 @@ public class UIPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Journal.CloseJournal();
     }
 
     // Update is called once per frame
@@ -38,6 +38,6 @@ public class UIPanel : MonoBehaviour
 
     public void ShowJournal()
     {
-
+        m_Journal.OpenJournal();
     }
 }

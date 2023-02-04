@@ -47,17 +47,17 @@ public class Ancestor : ScriptableObject
                 responses.AddRange(unlockedTrait.GetNegativeResponses());
             }
         }
-
-        if(responses.Count >= 1 && traits.Count >= 1)
+        npcResponse = "";
+        trait = null;
+        if(responses.Count > 0)
         {
             npcResponse = responses[0];
-            trait = traits[0];
+            if(traits.Count > 0)
+            {
+                trait = traits[0];
+            }
             return true;
         }
-        {
-            npcResponse = "";
-            trait = null;
-            return true;
-        }
+        return false;
     }
 }

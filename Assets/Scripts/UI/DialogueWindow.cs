@@ -30,13 +30,13 @@ public class DialogueWindow : MonoBehaviour
 
     public void TestDisplay()
     {
-        ShowChoices(new string[] { "Option a", "Option b" }, null);
-        ShowText("Obi wan", "Hello there, this is a test message", null);
+        //ShowChoices(new string[] { "Option a", "Option b" }, null);
+        //ShowText("Obi wan", "Hello there, this is a test message", null);
     }
 
-    public void ShowText(string characterName, string text, OnTextContinue onTextContinue)
+    public void ShowText(string characterName, string text, Sprite bust, OnTextContinue onTextContinue)
 	{
-        m_TextBox.ShowText(characterName, text, onTextContinue);
+        m_TextBox.ShowText(characterName, text, bust, onTextContinue);
         GetComponent<Animator>().SetBool("ShowText", true);
     }
     public void ShowChoices(string[] choices, OnChoiceSelect onChoiceSelected)

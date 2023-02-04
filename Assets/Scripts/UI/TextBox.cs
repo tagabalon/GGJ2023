@@ -13,6 +13,7 @@ public class TextBox : MonoBehaviour, IPointerClickHandler
 
     public TMP_Text m_CharacterName;
     public TMP_Text m_Dialogue;
+    public Image m_Bust;
     public Image m_Prompter;
 
     private int m_TextSize = 0;
@@ -39,7 +40,7 @@ public class TextBox : MonoBehaviour, IPointerClickHandler
         }
     }
 
-	internal void ShowText(string characterName, string text, OnTextContinue onTextContinue)
+	internal void ShowText(string characterName, string text, Sprite bust, OnTextContinue onTextContinue)
 	{
 		m_CharacterName.text = characterName;
         m_TextSize = text.Length;
@@ -47,6 +48,15 @@ public class TextBox : MonoBehaviour, IPointerClickHandler
         m_Dialogue.maxVisibleCharacters = 0;
         m_TextDisplaying = true;
         m_Prompter.gameObject.SetActive(false);
+        if (bust != null)
+        {
+            m_Bust.sprite = bust;
+            m_Bust.gameObject.SetActive(true);
+        }
+        else
+        {
+            m_Bust.gameObject.SetActive(false);
+        }
 
         m_OnTextContinue = onTextContinue;
 
@@ -56,7 +66,16 @@ public class TextBox : MonoBehaviour, IPointerClickHandler
     {
         if(eventData.button == 0)
         {
-            m_OnTextContinue();
+            if (m_TextDisplaying)
+            {
+                m_Dialogue.maxVisibleCharacters = m_TextSize;
+                m_TextDisplaying = false;
+                m_Prompter.gameObject.SetActive(true);
+            }
+            else
+            {
+                m_OnTextContinue();
+            }
         }
     }
 }

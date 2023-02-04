@@ -126,4 +126,32 @@ public class Progression : MonoBehaviour
     {
         return m_Questions.ToArray();
     }
+
+    internal void AddQuestion(Question question, int amount)
+    {
+        InventoryQuestion q = GetInventoryQuestion(question);
+        if(q == null)
+        {
+            q = new InventoryQuestion();
+            q.m_Question = question;
+            q.m_Count = 1;
+
+            m_Questions.Add(q);
+        }
+        else
+        {
+            q.m_Count += amount;
+        }
+    }
+
+    private InventoryQuestion GetInventoryQuestion(Question question)
+    {
+        foreach(InventoryQuestion q in m_Questions) { 
+            if(q.m_Question = question)
+            {
+                return q;
+            }
+        }
+        return null;
+    }
 }

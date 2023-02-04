@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 1050062410241727608}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7115315962738361927
 SpriteRenderer:
@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen: 0
+  m_Loot: {fileID: 0}
+  m_Amount: 0
 --- !u!1001 &7497506740150196329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110,6 +112,10 @@ PrefabInstance:
     - target: {fileID: 2447627939783147249, guid: add92b3d82ea4e249af65f0ee4deb940, type: 3}
       propertyPath: m_Name
       value: InteractableBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729422466242487487, guid: add92b3d82ea4e249af65f0ee4deb940, type: 3}
+      propertyPath: interactKey
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6729422466242487487, guid: add92b3d82ea4e249af65f0ee4deb940, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target

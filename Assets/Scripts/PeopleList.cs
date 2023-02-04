@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,35 +7,46 @@ using UnityEngine.UI;
 
 public class PeopleList : MonoBehaviour
 {
-    [SerializeField] List<PersonSO> people;
-    [SerializeField] GameObject[] personSlots;
+    Progression.UnlockedNPC[] unlockedNPCS;
+    [SerializeField] DisplayTraits[] personSlots;
     int startingDisplayIndex = 0;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        //people = new List<PersonSO>();
+        unlockedNPCS = GameManager.GetInstance().GetUnlockedNPCs();
     }
 
     // Update is called once per frame
     void Update()
     {
-        DisplayPeople();
+       
     }
     
     void DisplayPeople()
     {
         for(int i = 0; i < personSlots.Length; i++)
         {
-            Image personImage = personSlots[i].GetComponentInChildren<Image>();
+            personSlots[i].displayTraitHover = OnHover;
+            Sprite personImage = personSlots[i].GetComponentInChildren<Sprite>();
             TextMeshProUGUI personName = personSlots[i].GetComponentInChildren<TextMeshProUGUI>();
             int j = startingDisplayIndex + i;
 
-            if (j < people.Count)
+            if (j < unlockedNPCS.Length)
             {
-                personImage = people[j].GetPersonImage();
-                personName.text = people[j].GetPersonName();
+                personImage =  unlockedNPCS[j].m_NPC.m_Portrait;
+                personName.text = unlockedNPCS[j].m_NPC.m_CharacterName;
+
+                GameObject namesText = personSlots[j].dialoguePanel.transform.Find("Names Text").gameObject;
+                GameObject traitsText = personSlots[j].dialoguePanel.transform.Find("Traits Text").gameObject;
+
+                namesText.GetComponent<TextMeshProUGUI>().text = personName.text;
+
+                List<PersonalityTrait> traitList = unlockedNPCS[j].m_UnlockedTraits;
+
+                for(int k = 0; k < traitList.Count; k++)
+                    traitsText.GetComponent<TextMeshProUGUI>().text += traitList[k].TraitName + "\n";
+
             }
             else
             {
@@ -42,6 +54,11 @@ public class PeopleList : MonoBehaviour
                 personName.text = null;
             }
         }
+    }
+
+    private void OnHover(DisplayTraits displayTraits)
+    {
+        
     }
 
     public void OnUpButtonPressed()

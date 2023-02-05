@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7115315962738361926}
   - component: {fileID: 7115315962738361927}
   - component: {fileID: 4298675899788854291}
+  - component: {fileID: 8926684892268991765}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -101,6 +102,22 @@ MonoBehaviour:
   isOpen: 0
   m_Loot: {fileID: 0}
   m_Amount: 0
+--- !u!58 &8926684892268991765
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115315962738361928}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09876633, y: 0.21616107}
+  serializedVersion: 2
+  m_Radius: 0.5327714
 --- !u!1001 &7497506740150196329
 PrefabInstance:
   m_ObjectHideFlags: 0

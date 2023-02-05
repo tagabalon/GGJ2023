@@ -42,7 +42,7 @@ public class PeopleList : MonoBehaviour
             }
             else
             {
-                personSlots[i].gameObject.SetActive(false);
+                personSlots[i].HidePortrait();
             }
         }
     }

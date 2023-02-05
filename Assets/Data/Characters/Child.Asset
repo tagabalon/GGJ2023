@@ -21,6 +21,8 @@ MonoBehaviour:
     m_Text: Hello...
   - m_InteractionType: 1
     m_Text: My name is Sigrun...
+  - m_InteractionType: 2
+    m_Text: Oh hi...I'm having a snack right now, want some?
   m_TraitList:
   - {fileID: 11400000, guid: 8fced1b9cc87401478da868db1526889, type: 2}
   - {fileID: 11400000, guid: 60fbc35ce6f1d8d4097dbb2780f79b04, type: 2}

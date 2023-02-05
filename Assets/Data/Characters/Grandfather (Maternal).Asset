@@ -21,6 +21,8 @@ MonoBehaviour:
     m_Text: '*yawns* Hi there, its so cloudy here today.'
   - m_InteractionType: 1
     m_Text: My name is Jackson, its so nice to meet you.
+  - m_InteractionType: 2
+    m_Text: Hello, it's you again...today feels a little slow huh?
   m_TraitList:
   - {fileID: 11400000, guid: 5e6c42b7316a34a44a404cb1f440336e, type: 2}
   - {fileID: 11400000, guid: f3a074a98cb551c4dac05d2ba5c78212, type: 2}

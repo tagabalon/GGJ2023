@@ -34,9 +34,7 @@ public class FamilyTreeObject : MonoBehaviour
             return isCorrect;
         }
     }
-
-    [SerializeField] Button submitButton;
-
+     
     public List<AnswerData> m_AnswerList;
     // Start is called before the first frame update
     void Start()
@@ -53,12 +51,5 @@ public class FamilyTreeObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(AnswerData answer in m_AnswerList)
-        {
-            if(answer.m_Item.GetDraggablePortrait() == null)
-            {
-                submitButton.interactable = false;
-            }
-        }
     }
 }

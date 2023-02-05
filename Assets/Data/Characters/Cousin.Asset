@@ -22,6 +22,6 @@ MonoBehaviour:
   - m_InteractionType: 1
     m_Text: My name is Diana...sorry, I'm just so sleepy.
   - m_InteractionType: 2
-    m_Text: Hello, it's you again.
+    m_Text: (yawns) Oh hello, it's you...sorry I doze off.
   m_TraitList:
   - {fileID: 11400000, guid: f3a074a98cb551c4dac05d2ba5c78212, type: 2}

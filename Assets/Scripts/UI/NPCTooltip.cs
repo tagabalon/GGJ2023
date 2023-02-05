@@ -15,8 +15,8 @@ public class NPCTooltip : MonoBehaviour
             if(i >= m_TraitList.Count)
 			{
                 TMP_Text newText = Instantiate<TMP_Text>(m_TraitList[0]);
-                newText.transform.localScale = Vector3.one;
                 newText.transform.SetParent(m_TraitList[0].transform.parent);
+                newText.transform.localScale = Vector3.one;
                 m_TraitList.Add(newText);
 			}
             m_TraitList[i].text = traits[i].TraitName;

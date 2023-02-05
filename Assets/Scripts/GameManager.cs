@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager m_Instance;
     [SerializeField] GameObject panel;
+    [SerializeField] FamilyTreeObject familyTreeObject;
     bool bookIsOpen = false;
 
     private void Awake()
@@ -69,6 +70,28 @@ public class GameManager : MonoBehaviour
         {
             panel.SetActive(false);
             bookIsOpen = false;
+        }
+    }
+
+    public void OnBookSubmit()
+    {
+
+        bool isCorrect = true;
+
+        FamilyTreeObject.AnswerData[] correctAnswers = familyTreeObject.GetTreeItems();
+
+
+        for(int i = 0; i < correctAnswers.Length; i++)
+        {
+            if (!correctAnswers[i].IsCorrect())
+                isCorrect = false;
+        }
+
+
+        if (isCorrect)
+        {
+            Debug.Log("YOU WON!!!");
+            //Win Screen
         }
     }
 

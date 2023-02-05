@@ -12,6 +12,8 @@ public class FamilyTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	private HightlightItemCallback m_OnHightlightItem;
 	private bool hightlighted = false;
 
+	private DraggablePortrait m_DraggingPortrait;
+
 	public bool m_ItemEnabled = true;
 
 	// Start is called before the first frame update
@@ -39,6 +41,7 @@ public class FamilyTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 			DraggablePortrait portrait = eventData.selectedObject.GetComponent<DraggablePortrait>();
 			if (portrait != null)
 			{
+
 				GetComponent<Image>().enabled = true;
 				m_OnHightlightItem?.Invoke(this, true);
 				hightlighted = true;
@@ -61,7 +64,15 @@ public class FamilyTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	{
 		if (!m_ItemEnabled)
 			return;
+
 		portrait.transform.parent = transform.GetComponentInChildren<Transform>();
 		portrait.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+        this.m_DraggingPortrait = portrait;
+    }
+
+	public DraggablePortrait GetDraggablePortrait()
+	{
+		return this.m_DraggingPortrait;
 	}
 }

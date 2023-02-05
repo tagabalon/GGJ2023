@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class FamilyTreeObject : MonoBehaviour
 {
@@ -13,7 +15,27 @@ public class FamilyTreeObject : MonoBehaviour
 
         [SerializeField]
         public Ancestor m_NPC;
-	}
+
+        internal bool IsCorrect()
+        {
+            bool isCorrect = true;
+
+            if(m_Item.GetDraggablePortrait() != null)
+            {
+                if (m_Item.GetDraggablePortrait().m_NPC.m_NPC != this.m_NPC)
+                    isCorrect = false;
+
+            }
+            else
+            {
+                isCorrect = false;
+            }
+
+            return isCorrect;
+        }
+    }
+
+    [SerializeField] Button submitButton;
 
     public List<AnswerData> m_AnswerList;
     // Start is called before the first frame update
@@ -23,22 +45,20 @@ public class FamilyTreeObject : MonoBehaviour
     }
 
 
-    internal FamilyTreeItem[] GetTreeItems()
+    internal AnswerData[] GetTreeItems()
     {
-        List<FamilyTreeItem> temp = new List<FamilyTreeItem>();
-        foreach (AnswerData answer in m_AnswerList)
-        {
-            if (answer.m_Item != null)
-			{
-                temp.Add(answer.m_Item);
-			}
-        }
-        return temp.ToArray();
+        return m_AnswerList.ToArray();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        foreach(AnswerData answer in m_AnswerList)
+        {
+            if(answer.m_Item.GetDraggablePortrait() == null)
+            {
+                submitButton.interactable = false;
+            }
+        }
     }
 }

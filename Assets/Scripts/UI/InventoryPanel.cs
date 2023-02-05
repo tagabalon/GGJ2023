@@ -30,8 +30,8 @@ public class InventoryPanel : MonoBehaviour
             if(i >= m_Questions.Count)
             {
                 QuestionItem newItem = Instantiate<QuestionItem>(m_Questions[0]);
+                newItem.transform.SetParent(m_Questions[0].transform.parent);
                 newItem.transform.localScale = Vector3.one;
-                newItem.transform.SetParent(m_Questions[0].transform.parent);  
                 m_Questions.Add(newItem);
             }
             m_Questions[i].SetValue(questions[i]);

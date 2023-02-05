@@ -6,7 +6,7 @@ using UnityEngine;
 public class FamilyTreePanel : MonoBehaviour
 {
     public FamilyTreeObject m_Tree;
-    private FamilyTreeItem[] m_TreeItems;
+    private FamilyTreeObject.AnswerData[] m_TreeItems;
 
     private FamilyTreeItem m_HighlightedItem = null;
     // Start is called before the first frame update
@@ -23,10 +23,12 @@ public class FamilyTreePanel : MonoBehaviour
 
     public void ShowFamilyTree()
 	{
+        FamilyTreeItem temp;
         m_TreeItems = m_Tree.GetTreeItems();
-        foreach(FamilyTreeItem treeItem in m_TreeItems)
+        foreach(FamilyTreeObject.AnswerData treeItem in m_TreeItems)
 		{
-            treeItem.SetOnHighlightedCallback(OnHighlightedItem);
+            temp = treeItem.m_Item;
+            temp.SetOnHighlightedCallback(OnHighlightedItem);
 		}
 	}
 

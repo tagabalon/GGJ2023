@@ -57,11 +57,11 @@ public class PeopleList : MonoBehaviour
         return false;
 	}
 
-	private void OnDisplayTooltip(Progression.UnlockedNPC npc, bool show)
+	private void OnDisplayTooltip(Progression.UnlockedNPC npc, bool show, Vector2 position)
 	{
 		if(show)
 		{
-            m_Tooltip.Show(npc);
+            m_Tooltip.Show(npc, position);
 		}
 		else
 		{

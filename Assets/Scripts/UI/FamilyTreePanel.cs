@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static FamilyTreeObject;
 
 public class FamilyTreePanel : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class FamilyTreePanel : MonoBehaviour
     private FamilyTreeObject.AnswerData[] m_TreeItems;
 
     private FamilyTreeItem m_HighlightedItem = null;
+    [SerializeField] Button submitButtton;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +33,9 @@ public class FamilyTreePanel : MonoBehaviour
             temp = treeItem.m_Item;
             temp.SetOnHighlightedCallback(OnHighlightedItem);
 		}
-	}
+
+        this.submitButtton.interactable = false;
+    }
 
 	private void OnHighlightedItem(FamilyTreeItem treeItem, bool highlighted)
 	{
@@ -52,5 +57,15 @@ public class FamilyTreePanel : MonoBehaviour
 	internal void DropPortrait(DraggablePortrait portrait)
 	{
 		m_HighlightedItem.SetContent(portrait);
-	}
+
+        this.submitButtton.interactable = true;
+        foreach (AnswerData answer in m_Tree.GetTreeItems())
+        {
+            if (answer.m_Item.GetDraggablePortrait() == null)
+            {
+                this.submitButtton.interactable = false;
+                break;
+            }
+        }
+    }
 }

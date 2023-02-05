@@ -7,7 +7,7 @@ using UnityEngine;
 public class NPCTooltip : MonoBehaviour
 {
     public List<TMP_Text> m_TraitList;
-    internal void Show(Progression.UnlockedNPC npc)
+    internal void Show(Progression.UnlockedNPC npc, Vector2 position)
     {
         PersonalityTrait[] traits = npc.GetTraits();
         for(int i = 0; i < traits.Length; i++)
@@ -26,6 +26,7 @@ public class NPCTooltip : MonoBehaviour
             m_TraitList[i].gameObject.SetActive(false);
 		}
 
+        //GetComponent<RectTransform>().localPosition = position;
         gameObject.SetActive(true);
     }
 

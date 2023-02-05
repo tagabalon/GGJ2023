@@ -10,6 +10,7 @@ public class AncestorObject : MonoBehaviour
     private Interaction.InteractionType m_CurrentInteraction;
 
     private int m_EndIndex = -1;
+    private bool m_IsInteracting = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class AncestorObject : MonoBehaviour
 
     public void Interact()
     {
+        if (m_IsInteracting) return;
         Interaction.InteractionType newInteraction = Interaction.InteractionType.None;
         if (!GameManager.GetInstance().IsNPCUnlocked(m_Data))
         {
@@ -38,6 +40,7 @@ public class AncestorObject : MonoBehaviour
         {
             SetInteraction(newInteraction);
         }
+        m_IsInteracting = true;
     }
 
     private void OnTextEnd()
@@ -75,6 +78,7 @@ public class AncestorObject : MonoBehaviour
         if(index == m_EndIndex)
         {
             DialogueWindow.GetInstance().Close();
+            m_IsInteracting = false;
         }
         else
         {

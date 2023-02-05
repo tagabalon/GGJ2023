@@ -89,8 +89,7 @@ public class GameManager : MonoBehaviour
 
         if (isCorrect)
         {
-            Debug.Log("YOU WON!!!");
-            //Win Screen
+            UIPanel.GetInstance().ShowWinPanel();
         }
     }
 

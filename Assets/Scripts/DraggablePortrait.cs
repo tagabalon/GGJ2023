@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class DraggablePortrait : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public delegate void TooltipCallback(Progression.UnlockedNPC npc, bool show);
+    public delegate void TooltipCallback(Progression.UnlockedNPC npc, bool show, Vector2 position);
     private TooltipCallback m_OnDisplayTooltip;
 
     public delegate bool DropppedCallback(DraggablePortrait portrait);
@@ -62,7 +62,7 @@ public class DraggablePortrait : MonoBehaviour, IDragHandler, IPointerDownHandle
         if (eventData.button == 0)
         {
             m_DragOffset = eventData.position - (Vector2)transform.position;
-            m_OnDisplayTooltip(null, false);
+            m_OnDisplayTooltip(null, false, Vector2.zero);
             GetComponent<Image>().raycastTarget = false;
         }
     }
@@ -84,11 +84,11 @@ public class DraggablePortrait : MonoBehaviour, IDragHandler, IPointerDownHandle
 	public void OnPointerEnter(PointerEventData eventData)
 	{
         if(!eventData.dragging)
-            m_OnDisplayTooltip(m_NPC, true);
+            m_OnDisplayTooltip(m_NPC, true, eventData.position);
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
     {
-        m_OnDisplayTooltip(null, false);
+        m_OnDisplayTooltip(null, false, Vector2.zero);
     }
 }

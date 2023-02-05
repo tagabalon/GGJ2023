@@ -12,6 +12,8 @@ public class UIPanel : MonoBehaviour
     public HUDPanel m_HUD;
     public JournalPanel m_Journal;
     public InventoryPanel m_Inventory;
+    public WinPanel m_WinPanel;
+    
     private void Awake()
     {
         m_Instance = this;
@@ -21,6 +23,7 @@ public class UIPanel : MonoBehaviour
     {
         m_Journal.CloseJournal();
         m_Inventory.HideInventory();
+        m_WinPanel.HidePanel();
     }
 
     // Update is called once per frame
@@ -48,5 +51,10 @@ public class UIPanel : MonoBehaviour
     {
         m_Popups.ShowPopup("Collected a new question item!",
             "Item: " + question.m_QuestionText +"\n" + "Qty: " + amount);
+    }
+
+    internal void ShowWinPanel()
+    {
+        m_WinPanel.ShowWin();
     }
 }

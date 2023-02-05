@@ -31,12 +31,23 @@ public class TextBox : MonoBehaviour, IPointerClickHandler
         if(m_TextDisplaying)
 		{
             m_Dialogue.maxVisibleCharacters++;
+            if(Input.GetKeyUp(KeyCode.Space))
+            {
+                m_Dialogue.maxVisibleCharacters = m_TextSize;
+            }
+
             if(m_Dialogue.maxVisibleCharacters >= m_TextSize)
 			{
                 m_TextDisplaying = false;
                 m_Prompter.gameObject.SetActive(true);
             }
-
+        }
+        else
+        {
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                m_OnTextContinue();
+            }
         }
     }
 

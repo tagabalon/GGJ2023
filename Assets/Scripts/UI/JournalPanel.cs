@@ -10,7 +10,6 @@ public class JournalPanel : MonoBehaviour
     public PeopleList m_NPCs;
     public FamilyTreePanel m_FamilyTree;
 
-    [SerializeField] Button submitButtton;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +24,6 @@ public class JournalPanel : MonoBehaviour
     }
     internal void OpenJournal()
     {
-        foreach (AnswerData answer in m_FamilyTree.m_Tree.GetTreeItems())
-        {
-            if (answer.m_Item.GetDraggablePortrait() == null)
-            {
-                this.submitButtton.interactable = false;
-            }
-        }
-
 
         m_NPCs.DisplayPeople();
         m_FamilyTree.ShowFamilyTree();

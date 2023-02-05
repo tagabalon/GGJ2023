@@ -13,9 +13,15 @@ public class ChestController : MonoBehaviour
 		if (!isOpen)
 		{
 			isOpen = true;
-
+			PlayAudioClip();
 			GameManager.GetInstance().AddQuestion(m_Loot, m_Amount);
 			UIPanel.GetInstance().ShowLoot(m_Loot, m_Amount);
 		}
 	}
+	public void PlayAudioClip()
+    {
+		AudioSource audio = gameObject.GetComponent<AudioSource>();
+		audio.Play();
+
+    }
 }

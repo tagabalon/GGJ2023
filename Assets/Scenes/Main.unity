@@ -222,8 +222,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 932270290}
   m_HandleRect: {fileID: 932270289}
   m_Direction: 2
-  m_Value: 1.0000033
-  m_Size: 0.8234703
+  m_Value: 1
+  m_Size: 0.8235028
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -740,27 +740,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254066564}
   m_CullTransparentMesh: 1
---- !u!1 &257930274 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7872782402293612301, guid: 71b4a8be037169e47853a9f5577fa2e0, type: 3}
-  m_PrefabInstance: {fileID: 549620719}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &257930277
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257930274}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.102214515, y: 0.10070914}
-  serializedVersion: 2
-  m_Radius: 0.55578095
 --- !u!224 &305589038 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1855481827828760094, guid: 52749586817c85d4e821e25e4744be7f, type: 3}
@@ -1020,6 +999,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2070289099851369936, guid: 71b4a8be037169e47853a9f5577fa2e0, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729902009004881711, guid: 71b4a8be037169e47853a9f5577fa2e0, type: 3}
+      propertyPath: m_Volume
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729902009004881711, guid: 71b4a8be037169e47853a9f5577fa2e0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451049790290003881, guid: 71b4a8be037169e47853a9f5577fa2e0, type: 3}
+      propertyPath: m_Loot
+      value: 
+      objectReference: {fileID: 11400000, guid: 875b17385e9a4ee41b4980ab273d42ea, type: 2}
     - target: {fileID: 7872782402293612301, guid: 71b4a8be037169e47853a9f5577fa2e0, type: 3}
       propertyPath: m_Name
       value: Chest 1
@@ -1334,27 +1329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f5c6e9d49944a4fac1cd530bf476a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &750559148 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4503083481506596338, guid: 71b4a8be037169e47853a9f5577fa2e0, type: 3}
-  m_PrefabInstance: {fileID: 549620719}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &750559151
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750559148}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.102214515, y: 0.07994521}
-  serializedVersion: 2
-  m_Radius: 0.48871523
 --- !u!1 &853102104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,8 +3096,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 86683092}
   m_HandleRect: {fileID: 86683091}
   m_Direction: 0
-  m_Value: 1.0007323
-  m_Size: 0.99912566
+  m_Value: 1.0002441
+  m_Size: 0.9991655
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4383,11 +4357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4919657087869098715, guid: ba120b044197b52498115aef548d8b4e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -602.5008
+      value: -602.5002
       objectReference: {fileID: 0}
     - target: {fileID: 4919657087869098715, guid: ba120b044197b52498115aef548d8b4e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 431.49933
+      value: 431.4999
       objectReference: {fileID: 0}
     - target: {fileID: 4919657087869098715, guid: ba120b044197b52498115aef548d8b4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

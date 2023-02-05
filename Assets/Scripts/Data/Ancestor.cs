@@ -17,7 +17,8 @@ public class Ancestor : ScriptableObject
     internal string GetInteractionText(Interaction.InteractionType interaction)
     {
         if(interaction == Interaction.InteractionType.FirstGreeting ||
-            interaction == Interaction.InteractionType.SelfIntro)
+            interaction == Interaction.InteractionType.SelfIntro
+            || interaction == Interaction.InteractionType.TalkAgain)
         {
             foreach(NPCResponse response in m_ResponseList)
             {
@@ -27,7 +28,7 @@ public class Ancestor : ScriptableObject
                 }
             }
         }
-        return "Text Missing";
+        return "Text Missing for interaction type " + interaction;
 
     }
 

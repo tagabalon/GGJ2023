@@ -28,6 +28,11 @@ public class AncestorObject : MonoBehaviour
         if (!GameManager.GetInstance().IsNPCUnlocked(m_Data))
         {
             newInteraction = Interaction.InteractionType.FirstGreeting;
+            GameManager.GetInstance().UnlockNPC(m_Data);
+        }
+        else
+        {
+            newInteraction = Interaction.InteractionType.TalkAgain;
         }
         if (newInteraction != Interaction.InteractionType.None)
         {

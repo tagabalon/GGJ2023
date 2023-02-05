@@ -69,6 +69,8 @@ public class ChoiceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         m_Text.text = text;
         m_OnSelectChoice = onSelectChoice;
         m_Highlighted = false;
+
+        gameObject.SetActive(true);
     }
 
 }

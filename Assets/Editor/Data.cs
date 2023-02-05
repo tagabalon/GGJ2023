@@ -52,4 +52,16 @@ public class Data
             AssetDatabase.ImportAsset(path);
         }
     }
+
+    [MenuItem("Assets/Create/GGJ2023/Game Script")]
+    public static void CreateGameScript()
+    {
+        string path = EditorUtility.SaveFilePanelInProject("Save Game Script", "new Game Script", "Asset", "Save Game Script", "Assets/Data");
+        if (path != "")
+        {
+            GameScript gs = ScriptableObject.CreateInstance<GameScript>();
+            AssetDatabase.CreateAsset(gs, path);
+            AssetDatabase.ImportAsset(path);
+        }
+    }
 }

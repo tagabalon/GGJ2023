@@ -23,17 +23,27 @@ public class Progression : MonoBehaviour
 
         internal void UnlockTraits(PersonalityTrait trait)
         {
-            if(m_UnlockedTraits == null)
-                m_UnlockedTraits = new List<PersonalityTrait>();
-
-            if(!m_UnlockedTraits.Contains(trait))
+            if (trait != null)
             {
-                m_UnlockedTraits.Add(trait);
+                if (m_UnlockedTraits == null)
+                    m_UnlockedTraits = new List<PersonalityTrait>();
+
+                if (!m_UnlockedTraits.Contains(trait))
+                {
+                    m_UnlockedTraits.Add(trait);
+                }
+            }
+            else
+            {
+                Debug.Assert(false, "No trait to unlock");
+
             }
         }
         internal PersonalityTrait[] GetTraits()
         {
-            return m_UnlockedTraits.ToArray();
+            if(m_UnlockedTraits != null)    
+                return m_UnlockedTraits.ToArray();
+            return null;
         }
     }
 
@@ -104,23 +114,24 @@ public class Progression : MonoBehaviour
 
     internal void UnlockNPC(Ancestor npc, PersonalityTrait trait)
     {
-        bool found = false;
-        foreach (UnlockedNPC unlockedNPC in m_UnlockedNPCs)
+        UnlockedNPC unlockedNPC = null;
+        foreach (UnlockedNPC _npc in m_UnlockedNPCs)
         {
-            if (unlockedNPC.m_NPC == npc)
+            if (_npc.m_NPC == npc)
             {
-                unlockedNPC.UnlockTraits(trait);
-                found = true;
+                unlockedNPC = _npc;
                 break;
             }
         }
-        if(!found)
+        if (unlockedNPC == null)
         {
-            UnlockedNPC unlockedNPC = new UnlockedNPC();
+            unlockedNPC = new UnlockedNPC();
             unlockedNPC.m_NPC = npc;
-            unlockedNPC.UnlockTraits(trait);
+            unlockedNPC.m_Locked = false;
             m_UnlockedNPCs.Add(unlockedNPC);
         }
+        if(trait != null)
+            unlockedNPC.UnlockTraits(trait);
     }
 
     public UnlockedNPC[] GetUnlockedNPCs()
@@ -153,7 +164,7 @@ public class Progression : MonoBehaviour
     private InventoryQuestion GetInventoryQuestion(Question question)
     {
         foreach(InventoryQuestion q in m_Questions) { 
-            if(q.m_Question = question)
+            if(q.m_Question == question)
             {
                 return q;
             }

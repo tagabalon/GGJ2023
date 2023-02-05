@@ -61,6 +61,7 @@ public class FamilyTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	{
 		if (!m_ItemEnabled)
 			return;
+
 		portrait.transform.parent = transform.GetComponentInChildren<Transform>();
 		portrait.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 	}

@@ -21,6 +21,8 @@ MonoBehaviour:
     m_Text: Hey there!
   - m_InteractionType: 1
     m_Text: 'My name is Fred, don''t worry, you''ll remember that name. What''s up? '
+  - m_InteractionType: 2
+    m_Text: Ah its you, do you wish to go somewhere?
   m_TraitList:
   - {fileID: 11400000, guid: 4c5664968b3276e4f96ea770bb3856a2, type: 2}
   - {fileID: 11400000, guid: 8fced1b9cc87401478da868db1526889, type: 2}

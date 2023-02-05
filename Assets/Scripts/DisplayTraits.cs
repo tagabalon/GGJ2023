@@ -10,6 +10,7 @@ public class DisplayTraits : MonoBehaviour
 {
     public DraggablePortrait m_Content;
 
+
     internal void SetNPC(Progression.UnlockedNPC unlockedNPC, 
         DraggablePortrait.TooltipCallback onDisplayTooltip, 
         DraggablePortrait.DropppedCallback onDroppedPortrait)
@@ -22,5 +23,9 @@ public class DisplayTraits : MonoBehaviour
         {
             m_Content.Hide();
         }
+    }
+    internal void HidePortrait()
+    {
+        m_Content.Hide();
     }
 }

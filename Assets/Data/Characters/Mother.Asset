@@ -21,6 +21,8 @@ MonoBehaviour:
     m_Text: Hello! You look quite cheery, care for a coffee?
   - m_InteractionType: 1
     m_Text: My name is Elise, its such a pleasure to meet you.
+  - m_InteractionType: 2
+    m_Text: Hello, it's so wonderful to see a familiar face.
   m_TraitList:
   - {fileID: 11400000, guid: 5e6c42b7316a34a44a404cb1f440336e, type: 2}
   - {fileID: 11400000, guid: 60fbc35ce6f1d8d4097dbb2780f79b04, type: 2}

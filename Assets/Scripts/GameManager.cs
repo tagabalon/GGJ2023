@@ -48,11 +48,10 @@ public class GameManager : MonoBehaviour
         return GetComponent<Progression>().GetQuestion(index, removeFromInventory);
     }
 
-    internal void UnlockNPC(Ancestor npc, PersonalityTrait trait)
+    internal void UnlockNPC(Ancestor npc, PersonalityTrait trait = null)
     {
         GetComponent<Progression>().UnlockNPC(npc, trait);
     }
-
     public Progression.UnlockedNPC[] GetUnlockedNPCs()
     {
         return GetComponent<Progression>().GetUnlockedNPCs();
@@ -81,4 +80,5 @@ public class GameManager : MonoBehaviour
     {
         GetComponent<Progression>().AddQuestion(question, amount);
     }
+
 }

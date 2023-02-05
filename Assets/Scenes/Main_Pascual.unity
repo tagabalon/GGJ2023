@@ -222,8 +222,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 932270290}
   m_HandleRect: {fileID: 932270289}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.82110286
+  m_Value: 1.0000013
+  m_Size: 0.8235063
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2978,6 +2978,31 @@ MonoBehaviour:
     m_UnlockedTraits:
     - {fileID: 11400000, guid: 4c5664968b3276e4f96ea770bb3856a2, type: 2}
     - {fileID: 11400000, guid: 8fced1b9cc87401478da868db1526889, type: 2}
+  - m_NPC: {fileID: 11400000, guid: 22485a7e50d3e494090cc76299d16d4b, type: 2}
+    m_Locked: 0
+    m_UnlockedTraits:
+    - {fileID: 11400000, guid: 4c5664968b3276e4f96ea770bb3856a2, type: 2}
+    - {fileID: 11400000, guid: 8fced1b9cc87401478da868db1526889, type: 2}
+  - m_NPC: {fileID: 11400000, guid: e5511b2b663f85241a5d212cec8bf70d, type: 2}
+    m_Locked: 0
+    m_UnlockedTraits:
+    - {fileID: 11400000, guid: 4c5664968b3276e4f96ea770bb3856a2, type: 2}
+    - {fileID: 11400000, guid: 8fced1b9cc87401478da868db1526889, type: 2}
+  - m_NPC: {fileID: 11400000, guid: 934e1f9bdb9ed9e4ba91cca7e2768c85, type: 2}
+    m_Locked: 0
+    m_UnlockedTraits:
+    - {fileID: 11400000, guid: 4c5664968b3276e4f96ea770bb3856a2, type: 2}
+    - {fileID: 11400000, guid: 8fced1b9cc87401478da868db1526889, type: 2}
+  - m_NPC: {fileID: 11400000, guid: 78d4a45f16272b24a8217e0dfd7ebe55, type: 2}
+    m_Locked: 0
+    m_UnlockedTraits:
+    - {fileID: 11400000, guid: 4c5664968b3276e4f96ea770bb3856a2, type: 2}
+    - {fileID: 11400000, guid: 8fced1b9cc87401478da868db1526889, type: 2}
+  - m_NPC: {fileID: 11400000, guid: 63dabd4945ece0a4da86290caaf0051e, type: 2}
+    m_Locked: 0
+    m_UnlockedTraits:
+    - {fileID: 11400000, guid: 4c5664968b3276e4f96ea770bb3856a2, type: 2}
+    - {fileID: 11400000, guid: 8fced1b9cc87401478da868db1526889, type: 2}
   m_Questions:
   - m_Question: {fileID: 11400000, guid: dca23b21da712644bb8647cc51820b80, type: 2}
     m_Count: 1
@@ -3096,8 +3121,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 86683092}
   m_HandleRect: {fileID: 86683091}
   m_Direction: 0
-  m_Value: 1.0001831
-  m_Size: 0.99625254
+  m_Value: 1.000305
+  m_Size: 0.99916923
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4357,11 +4382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4919657087869098715, guid: ba120b044197b52498115aef548d8b4e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -602.5001
+      value: -602.5005
       objectReference: {fileID: 0}
     - target: {fileID: 4919657087869098715, guid: ba120b044197b52498115aef548d8b4e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 431.49994
+      value: 431.49976
       objectReference: {fileID: 0}
     - target: {fileID: 4919657087869098715, guid: ba120b044197b52498115aef548d8b4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

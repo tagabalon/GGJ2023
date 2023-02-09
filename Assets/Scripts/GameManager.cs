@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private static GameManager m_Instance;
     [SerializeField] GameObject panel;
     [SerializeField] FamilyTreeObject familyTreeObject;
+    [SerializeField] GameObject winScreen;
     bool bookIsOpen = false;
 
     private void Awake()
